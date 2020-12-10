@@ -12,6 +12,7 @@ body {
     margin: 0;
 }
 
+/* background colour of the main web page */
 .container {
     background-color: #fafafa;
     transform-origin: top left;
@@ -21,16 +22,19 @@ body {
     padding: 50px;
 }
 
+/* rotates the nav hamburger so the x shows when clicked */
 .container.show-nav {
     transform: rotate(-20deg);
 }
 
+/* puts the circle in the top left part of the web page where the hamburger menu is */
 .circle-container {
     position: fixed;
     top: -100px;
     left: -100px;
 }
 
+/* this is the circle which is in the upper left hand corner of the web page */
 .circle {
     background-color: #ff7979;
     height: 200px;
@@ -40,6 +44,7 @@ body {
     transition: transform 0.5s linear;
 }
 
+/* rotates the circle div to allow for the x to show once hamburger menu has been clicked */
 .container.show-nav .circle {
     transform: rotate(-70deg);
 }
@@ -95,6 +100,7 @@ nav ul li {
     transition: transform 0.4s ease-in;
 }
 
+/* selects the ul li and then the second li in the list and moves it over to the right */
 nav ul li + li {
     margin-left: 15px;
     transform: translateX(-150%);
