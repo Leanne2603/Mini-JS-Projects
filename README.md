@@ -3,6 +3,6 @@
 ### 50 Mini Projects
 
 ### Tech Stack
-* Javascript
+* JavaScript
 * HTML
 * CSS
