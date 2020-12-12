@@ -34,3 +34,7 @@ body {
     width: 300px;
     max-width: 100%;
 }
+
+.container img:hover {
+    opacity: 0.3;
+}
