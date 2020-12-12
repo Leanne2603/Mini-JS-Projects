@@ -29,8 +29,8 @@ h1 {
     margin: 10px;
     border-radius: 10px;
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
-    transform: translateX(200%);
-    transition: transform 0.4 ease;
+    transform: translateX(400%);
+    transition: transform 0.4s ease;
 }
 
 .box:nth-last-of-type(even) {
