@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'JetBrains Mono', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.background {
+    background: url("https://images.unsplash.com/photo-1577905055304-3ca6c585fe15?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80") no-repeat center center/cover;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: calc(100vw + 60px);
+    height: calc(100vh + 60px);
+    z-index: -1;
+    filter: blur(0px)
+}
+
+.joke-background {
+    background: url("https://images.unsplash.com/photo-1576344333136-2e0a52bce0c9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80") no-repeat center center/cover;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: calc(100vw + 60px);
+    height: calc(100vh + 60px);
+}
+
+
+.loading-percentage {
+    font-size: 70px;
+    color: white;
+    position: absolute;
+}
+
+.mc {
+    display: flex;
+    flex-wrap: wrap;
+    color: #c20e0e;
+    font-size: 4rem;
+    margin: auto;
+    display: block;
+    text-align: center;
+    margin-top: 300px;
+    animation-name: xmas;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.dad-jokes{
+    font-size: 3rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@keyframes xmas {
+    from {background-color: #c20e0e;}
+    to {background-color: #089c08;}
+  }
+
+button {
+    background-color: #089c08;
+    border-radius: 30%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: rgb(201, 23, 23);
+    border: green solid 0.2rem;
+    font-size: 3rem;
+    width: 15rem;
+    padding: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+p {
+    margin-left: 45px;
+    display: flex;
+    flex-wrap: wrap;
+}
