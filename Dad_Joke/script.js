@@ -3,6 +3,7 @@ const loadPercentage = document.querySelector(".loading-percentage")
 const button = document.querySelector("button")
 const mc = document.querySelector(".mc")
 const jokeBg = document.querySelector(".joke-background")
+const loader = document.querySelector(".loader")
 
 jokeBg.classList.add("hidden")
 
@@ -35,9 +36,20 @@ button.addEventListener("click", () => {
     button.classList.add("hidden")
     background1.classList.add("hidden")
     jokeBg.classList.remove("hidden")
-    const number = prompt("Enter a number:")
-    dadJokes(number)
+    const number = prompt("Enter a number between 10 - 100:")
+    checkNumber(number)
+
 })
+
+function checkNumber(number) {
+    if (number >=10 && number <= 100) {
+        dadJokes(number)
+    } else {
+        alert("Uh oh! Your number was not between 10 and 100. Try Again...")
+        const newNumber = prompt("Enter a number between 10 - 100:")
+        checkNumber(newNumber)
+    }
+}
 
 function getJoke() {
     return new Promise((resolve, reject) => {
@@ -49,23 +61,29 @@ function getJoke() {
 }
 
 function dadJokes(number) {
-let jokesArray = []
+    loader.classList.remove("hidden")
+        let jokesArray = []
 
-for (let i = 0; i < number; i++) {
-    jokesArray.push(getJoke())
-}
+    for (let i = 0; i < number; i++) {
+        jokesArray.push(getJoke())
+    }
 
-Promise.all(jokesArray)
-    .then(jokes => {
-        const addJoke = document.getElementById("djokes")
-        addJoke.innerHTML = ""
-        for (let joke of jokes) {
-            let p = document.createElement("p")
-            p.innerHTML = joke
-            addJoke.appendChild(p)
-        }
-    })
-}
+    Promise.all(jokesArray)
+        .then(jokes => {
+            const addJoke = document.getElementById("djokes")
+            addJoke.innerHTML = ""
+            for (let joke of jokes) {
+                let p = document.createElement("p")
+                p.innerHTML = joke
+                addJoke.appendChild(p)
+            }
+            loader.classList.add("hidden")
+        })
+    }
+    
+
+
+
 
 
 
